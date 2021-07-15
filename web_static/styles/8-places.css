@@ -12,14 +12,15 @@ h1 {
     margin-bottom: 0px;
 }
 .places article h2 {
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin-top: 0px;
+    margin-bottom: 35px;
     font-size: 30px;
     position: relative;
 }
 
 article {
     width: 390px;
+    min-height: 325px;
     padding: 20px;
     margin: 20px;
     border: 1px solid #FF5A5F;
@@ -37,8 +38,8 @@ article {
     min-width: 60px;
     height: 60px;
     font-size: 30px;
-    right: 5%;
-    top: 10%;
+    right: 4%;
+    top: 3%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,8 +53,8 @@ article {
     justify-content: center;
     align-items: center;
     padding-bottom: 10px;
-    padding-top: 10px;
-    margin: 10px;
+    padding-top: 5px;
+    margin: 10px 0px;
 }
 
 .max_guest, .number_rooms, .number_bathrooms {
@@ -82,5 +83,7 @@ article {
 }
 
 p {
+    margin-bottom: 0px;
+    margin-top: 5px;
     text-align: left;
 }

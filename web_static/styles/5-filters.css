@@ -21,6 +21,7 @@
     justify-content: center;
     align-items: center;
     margin-right: 30px;
+    margin-left: 170px;
 }
 
 .filters button:hover {
@@ -40,18 +41,20 @@
 
 .locations {
     height: 100%;
-    width: 30%;
+    width: 25%;
     border-right: 1px solid #DDDDDD;
     padding-left: 50px;
+    position: relative;
 }
 
 .amenities {
     height: 100%;
-    width: 37%;
+    width: 25%;
     padding-left: 50px;
+    position: relative;
 }
 
 .blank {
     width: 80%;
-    height: 403px;
+    height: 407px;
 }
