@@ -27,12 +27,12 @@ class TestBaseModel(unittest.TestCase):
     def test_created_at_noArgs_type(self):
         '''check type of created_at w/o args'''
         my_model = BaseModel()
-        self.assertEqual(type(my_model.created_at), datetime)
+        self.assertEqual(type(my_model.created_at), datetime.datetime)
 
     def test_created_at_noArgs_format(self):
         '''check format %Y-%M-%DT%H:%M:%S.%MS'''
         datetime_format = re.compile(
-            r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$")
+            r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$')
         my_model = BaseModel()
         my_created_at = my_model.to_dict()['created_at']
         format_found = datetime_format.match(my_created_at)
@@ -40,7 +40,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_created_at_noArgs_value(self):
         '''check value of created_at w/o args'''
-        now = datetime.now().replace(microsecond=0)
+        now = datetime.datetime.now().replace(microsecond=0)
         my_model = BaseModel()
         self.assertEqual(my_model.created_at.replace(microsecond=0), now)
 
@@ -54,12 +54,12 @@ class TestBaseModel(unittest.TestCase):
     def test_updated_at_noArgs_type(self):
         '''check type updated_at'''
         my_model = BaseModel()
-        self.assertEqual(type(my_model.updated_at), datetime)
+        self.assertEqual(type(my_model.updated_at), datetime.datetime)
 
     def test_updated_at_noArgs_format(self):
         '''check format %Y-%M-%DT%H:%M:%S.%MS'''
         datetime_format = re.compile(
-            r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$")
+            r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$')
         my_model = BaseModel()
         my_updated_at = my_model.to_dict()['updated_at']
         format_found = datetime_format.match(my_updated_at)
@@ -67,7 +67,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_updated_at_noArgs_value(self):
         '''check value of updated_at'''
-        now = datetime.now().replace(microsecond=0)
+        now = datetime.datetime.now().replace(microsecond=0)
         my_model = BaseModel()
         self.assertEqual(my_model.updated_at.replace(microsecond=0), now)
 
@@ -91,9 +91,10 @@ class TestBaseModel(unittest.TestCase):
         BaseModel.name = "holberton"
         attributes = {}
         for key, value in my_model.to_dict().items():
-            if (key not in ('__class__', 'id', 'created_at', 'updated_at')):
+            if key not in ('__class__', 'id', 'created_at', 'updated_at'):
                 attributes[key] = value
         self.assertFalse(attributes)
+
 
 if __name__ == "__name__":
     unittest.main()

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+import os
 import unittest
 import json
 from models.engine.file_storage import FileStorage
@@ -54,20 +54,6 @@ class TestFileStorage(unittest.TestCase):
                 "BaseModel.64a8e9f5-4840-431c-9305-baff80edd779",
                 file_content.keys())
 
-    def test_exceding_args(self):
-        """Testing function to check methods with more arguments"""
-        dictionary = {"id": "64a8e9f5-4840-431c-9305-baff80edd778",
-                      "created_at": "2021-06-30T10:45:57.274432",
-                      "updated_at": "2021-06-30T10:45:57.274432"}
-        test = BaseModel(**dictionary)
-        with self.assertRaises(TypeError):
-            self.storage.new(test, test)
-
-        with self.assertRaises(TypeError):
-            self.storage.save(test)
-
-        with self.assertRaises(TypeError):
-            self.storage.reload(test)
 
     def test_reload_file(self):
         """Testing function to check the instance method reload"""
