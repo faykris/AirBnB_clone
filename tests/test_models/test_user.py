@@ -16,25 +16,29 @@ class TestUser(unittest.TestCase):
         """test email"""
         obj = User()
         obj.email = "holbie@holbertonschool.com"
-        self.assertNotEqual(obj.email, "")
+        self.assertTrue(obj.email)
+        self.assertEqual(obj.email, "holbie@holbertonschool.com")
 
     def test_password(self):
         """test password"""
         obj = User()
         obj.password = "root"
-        self.assertNotEqual(obj.password, "")
+        self.assertTrue(obj.password)
+        self.assertEqual(obj.password, "root")
 
     def test_first_name(self):
         """test first name"""
         obj = User()
         obj.first_name = "Julien"
-        self.assertNotEqual(obj.first_name, "")
+        self.assertTrue(obj.first_name)
+        self.assertEqual(obj.first_name, "Julien")
 
     def test_last_name(self):
         """test last name"""
         obj = User()
         obj.last_name = "Barbier"
-        self.assertNotEqual(obj.last_name, "")
+        self.assertTrue(obj.last_name)
+        self.assertEqual(obj.last_name, "Barbier")
 
 if __name__ == "__main__":
     unittest.main()
